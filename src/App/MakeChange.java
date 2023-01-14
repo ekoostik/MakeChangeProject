@@ -5,38 +5,51 @@ import java.util.Scanner;
 public class MakeChange {
 
 	public static void main(String[] args) {
-		double price = itemCost();
-		double paid = moneyGivin();
-		double change = prompt(price, paid);
+//		double price = itemCost();
+//		double paid = moneyGivin();
 
-// 		System.out.println(price);
-//		System.out.println(paid);
-	}
-
-// #1
-
-	public static double itemCost() {
 		Scanner sc = new Scanner(System.in);
 
-		System.out.println("Hello! welcome to the Make Change App!");
-		System.out.print("Please enter the item price: ");
-		double cost = sc.nextDouble();
+		System.out.println("Hello! Welcome to the Make Change App!");
+		System.out.print("\nPlease enter the item price: ");
+		double price = sc.nextDouble();
 		sc.nextLine();
-		return cost;
-
-	}
-
-//#2
-	public static double moneyGivin() {
-		Scanner sc = new Scanner(System.in);
-
 		System.out.print("Now enter the amount the customer paid: ");
 		double paid = sc.nextDouble();
 		sc.nextLine();
 		sc.close();
-		return paid;
+
+// 		System.out.println(price);
+//		System.out.println(paid);	
+
+		prompt(price, paid);
 
 	}
+
+// #1
+
+//	public static double itemCost() {
+//		Scanner sc = new Scanner(System.in);
+//
+//		System.out.println("Hello! welcome to the Make Change App!");
+//		System.out.print("Please enter the item price: ");
+//		double cost = sc.nextDouble();
+//		sc.nextLine();
+//		return cost;
+//
+//	}
+
+//#2
+//	public static double moneyGivin() {
+//		Scanner sc = new Scanner(System.in);
+//
+//		System.out.print("Now enter the amount the customer paid: ");
+//		double paid = sc.nextDouble();
+//		sc.nextLine();
+//		sc.close();
+//		return paid;
+//
+//	}
 
 //#3
 
@@ -44,11 +57,11 @@ public class MakeChange {
 
 		if (cost > paid) {
 			double stillOwe = cost - paid;
-			System.err.println("The customer still owes $" + stillOwe);
+			System.err.printf("The customer still owes $%.2f", stillOwe);
 			return stillOwe;
 		} else if (cost < paid) {
 			double change = paid - cost;
-			System.out.println("Customer is owed $" + change + " in change.");
+			System.out.printf("Customer is owed $%.2f in change: %n", change);
 
 			double twenty = (int) change / 20;
 			change = change % 20;
@@ -70,60 +83,60 @@ public class MakeChange {
 
 			if (twenty != 0) {
 				if (twenty > 1) {
-					System.out.println((int) twenty + " :Twenty dollar bills. ");
+					System.out.print((int) twenty + " Twenty dollar bills. ");
 				} else {
-					System.out.println((int) twenty + " :Twenty dollar bill. ");
+					System.out.print((int) twenty + " Twenty dollar bill. ");
 				}
 			}
 			if (tens != 0) {
 				if (tens > 1) {
-					System.out.print((int) tens + " :Ten dollar bills. ");
+					System.out.print((int) tens + " Ten dollar bills. ");
 				} else {
-					System.out.print((int) tens + " :Ten dollar bill. ");
+					System.out.print((int) tens + " Ten dollar bill. ");
 				}
 			}
 			if (fives != 0) {
 				if (fives > 1) {
-					System.out.print((int) fives + " :Five dollar bills. ");
+					System.out.print((int) fives + " Five dollar bills. ");
 				} else {
-					System.out.print((int) fives + " :Five dollar bill. ");
+					System.out.print((int) fives + " Five dollar bill. ");
 				}
 			}
 			if (single != 0) {
 				if (single > 1) {
-					System.out.print((int) single + " :One dollar bills. ");
+					System.out.print((int) single + " One dollar bills. ");
 				} else {
-					System.out.print((int) single + " :One dollar bill. ");
+					System.out.print((int) single + " One dollar bill. ");
 				}
 			}
 			if (quart != 0 && quart > 1) {
-				if ((int)quart > 1) {
-					System.out.print((int) quart + " :Quarters. ");
+				if ((int) quart > 1) {
+					System.out.print((int) quart + " Quarters. ");
 				} else {
-					System.out.print((int) quart + " :Quarter. ");
+					System.out.print((int) quart + " Quarter. ");
 				}
 			}
 			if (dime != 0 && dime > 1) {
-				if ((int)dime > 1) {
-					System.out.print((int) dime + " :Dimes. ");
+				if ((int) dime > 1) {
+					System.out.print((int) dime + " Dimes. ");
 				} else {
-					System.out.print((int) dime + " :Dime. ");
+					System.out.print((int) dime + " Dime. ");
 				}
 
 			}
 			if (nick != 0 && nick > 1) {
-				if ((int)nick > 1) {
-					System.out.print((int) nick + " :Nickels. ");
+				if ((int) nick > 1) {
+					System.out.print((int) nick + " Nickels. ");
 				} else {
-					System.out.print((int) nick + " :Nickel. ");
+					System.out.print((int) nick + " Nickel. ");
 				}
 
 			}
 			if (penn != 0 && penn > 1) {
-				if ((int)penn > 1) {
-					System.out.print((int) penn + " :Pennies. ");
+				if ((int) penn > 1) {
+					System.out.print((int) penn + " Pennies. ");
 				} else {
-					System.out.print((int) penn + " :Penny. ");
+					System.out.print((int) penn + " Penny. ");
 				}
 
 			}
